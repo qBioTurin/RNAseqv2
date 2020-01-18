@@ -37,5 +37,8 @@ Ensure your user has the rights to run docker (witout the use of ```sudo```). To
 ```
 * Log out and log back in so that your group membership is re-evaluated.
 
+### Reproducible Bioinformatics Community
+**RNAseqv2** is one of the tools developed under the umbrella of the Reproducible Bioinformatics project (http://www.reproducible-bioinformatics.org/), an open-source community aimed at providing to biologists and medical scientists an easyto-use and flexible framework, which also guarantees the ability to reproduce results independently by the underlying hardware, using Docker containerization (computational reproducibility).
+
 ### Disclaimer:
 **RNAseqv2**  developers have no liability for any use of **RNAseqv2**  functions, including without limitation, any loss of data, incorrect results, or any costs, liabilities, or damages that result from use of **RNAseqv2**.
