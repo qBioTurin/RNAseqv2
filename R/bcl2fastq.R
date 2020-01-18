@@ -62,7 +62,7 @@ bcl2fastq <- function(samplesheet,output.folder, threadBCL=1, threadWritingFastq
   tmp.run[length(tmp.run)+1] <- paste("demultiplexing user run time mins ",ptm[1]/60, sep="")
   tmp.run[length(tmp.run)+1] <- paste("demultiplexing system run time mins ",ptm[2]/60, sep="")
   tmp.run[length(tmp.run)+1] <- paste("demultiplexing elapsed run time mins ",ptm[3]/60, sep="")
-  writeLines(tmp.run, paste(main.folder,"time.info", sep="/"))
+  writeLines(tmp.run, paste(input.folder,"time.info", sep="/"))
 
 
   #Storing ExitSatus

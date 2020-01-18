@@ -61,7 +61,7 @@ dockerRun <- function( params=NULL){
     system(paste("docker logs ", dockerid, " >& ", substr(dockerid,1,12),".log", sep=""))
     system(paste("docker rm -f ",dockerid),intern= T)
 
-    system(paste("cp ",paste(path.package(package="RNAseq2"),"containers/containers.txt",sep="/")," ",getwd(), sep=""))
+    system(paste("cp ",paste(path.package(package="RNAseq2"),"/Containers/containersNames.txt",sep="/")," ",getwd(), sep=""))
 
     #Normal Docker execution
     system("echo 0 > ExitStatusFile 2>&1")
