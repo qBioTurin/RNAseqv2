@@ -2,7 +2,7 @@
 % Please edit documentation in R/bcl2fastq.R
 \name{bcl2fastq}
 \alias{bcl2fastq}
-\title{Generating running bcl2fastq}
+\title{Generating fastq running bcl2fastq}
 \usage{
 bcl2fastq(samplesheet, output.folder, threadBCL = 1,
   threadWritingFastq = 1, threadDem = 6)
@@ -29,4 +29,7 @@ This function executes the Illumina bcl2fastq program
     demultiplexing("~/home/data/input","~/home/data/output")
 
 }
+}
+\author{
+Marco Beccuti, marco.beccuti [at] unito [dot] it, University of Torino
 }

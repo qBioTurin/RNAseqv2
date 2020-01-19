@@ -23,5 +23,5 @@ This is an internal function executing a docker container. Not to be used by use
 }
 }
 \author{
-Beccuti Marco
+Marco Beccuti, marco.beccuti [at] unito [dot] it, University of Torino
 }

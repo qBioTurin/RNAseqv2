@@ -20,5 +20,5 @@ This is a function that prepares the docker environment to be used for the first
 }
 }
 \author{
-Beccuti Marco
+Marco Beccuti, marco.beccuti [at] unito [dot] it, University of Torino
 }

@@ -1,4 +1,4 @@
-#' @title Generating running bcl2fastq
+#' @title Generating fastq running bcl2fastq
 #' @description This function executes the Illumina bcl2fastq program
 #' @param samplesheet, a character string indicating the Illumina folder where the Samplesheet.csv is located.
 #' @param output.folder, a character string indicating the fastq output folder.
@@ -7,6 +7,7 @@
 #'  @param threadDem, a number indicating the number of threads to be used for for processing demultiplexed data
 #'
 #' @return Fastq files
+#' @author Marco Beccuti, marco.beccuti [at] unito [dot] it, University of Torino
 #' @examples
 #'\dontrun{
 #'     #running rsemstar index for human
@@ -20,14 +21,12 @@ bcl2fastq <- function(samplesheet,output.folder, threadBCL=1, threadWritingFastq
   input.folder=dirname(samplesheet)
 
   if (!file.exists(samplesheet)){
-    cat(paste("\nIt seems that the ",samplesheet, " file does not exist.\n"))
+    cat(paste("\nError: the ",samplesheet, " file does not exist.\n"))
     return(1)
   }
   setwd(input.folder)
 
-  #running time 1
-  ptm <- proc.time()
-  #running time 1
+
 
   #Test docker
   test <- dockerTest()
@@ -47,22 +46,13 @@ bcl2fastq <- function(samplesheet,output.folder, threadBCL=1, threadWritingFastq
   #Running docker
   params <- paste("--cidfile ", input.folder,"/dockerID -v ", input.folder,":/input -v ",output.folder,":/output -d ", containers.names["bcl2fastq",1],"  bcl2fastq /input /output /input/",basename(samplesheet)," ",threadBCL," ",threadWritingFastq," ",threadDem, sep="")
 
-  cat("\n\n************ Demultiplexing running ************\n\n")
+  cat("\n\n************  Demultiplexing  running   ************\n\n")
   resultRun=dockerRun(params=params)
 
   if(resultRun==0){
-    cat("\nDemultiplexing is finished\n")
+    cat("\n************ Demultiplexing is finished ************\n\n")
   }
   #Running docker
-
-
-  ptm <- proc.time() - ptm
-
-  tmp.run <- NULL
-  tmp.run[length(tmp.run)+1] <- paste("demultiplexing user run time mins ",ptm[1]/60, sep="")
-  tmp.run[length(tmp.run)+1] <- paste("demultiplexing system run time mins ",ptm[2]/60, sep="")
-  tmp.run[length(tmp.run)+1] <- paste("demultiplexing elapsed run time mins ",ptm[3]/60, sep="")
-  writeLines(tmp.run, paste(input.folder,"time.info", sep="/"))
 
 
   #Storing ExitSatus

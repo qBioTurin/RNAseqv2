@@ -2,7 +2,7 @@
 #' @description This is an internal function executing a docker container. Not to be used by users.
 #' @param params, a character string containing all parameters needed to run the docker container.
 #' @return 0 if success, 1 if parameters are missing, 2 if dockerid file is present, 3 if docker execution fails.
-#' @author Beccuti Marco
+#' @author Marco Beccuti, marco.beccuti [at] unito [dot] it, University of Torino
 #'
 #' @examples
 #'\dontrun{
@@ -25,6 +25,10 @@ dockerRun <- function( params=NULL){
         system("echo 2 > ExitStatusFile 2>&1")
         return(2)
     }
+
+    #running time 1
+    ptm <- proc.time()
+    #running time 1
 
     ## to execute docker
     userid=system("id -u", intern = TRUE)
@@ -62,6 +66,17 @@ dockerRun <- function( params=NULL){
     system(paste("docker rm -f ",dockerid),intern= T)
 
     system(paste("cp ",paste(path.package(package="RNAseq2"),"/Containers/containersNames.txt",sep="/")," ",getwd(), sep=""))
+
+    #Printing execution times
+    ptm <- proc.time() - ptm
+
+    tmp.run <- NULL
+    tmp.run[1] <- paste("User run time: ",ptm[1]/60,"m.", sep="")
+    tmp.run[2] <- paste("System run time: ",ptm[2]/60,"m.", sep="")
+    tmp.run[3] <- paste("Elapsed run time: ",ptm[3]/60,"m.", sep="")
+    writeLines(tmp.run, paste(getwd(),"/",substr(dockerid,1,12),".timeinfo", sep=""))
+
+    cat("\n\n", tmp.run[1],"\n",tmp.run[2],"\n",tmp.run[3],"\n\n")
 
     #Normal Docker execution
     system("echo 0 > ExitStatusFile 2>&1")
