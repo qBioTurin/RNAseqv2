@@ -36,7 +36,7 @@ fastqc <- function(input.folder, reads=1000){
   #reading docker image names
 
   #Running docker
-  params <- paste("--cidfile ", input.folder,"/dockerID -v ", input.folder,":/input  -d ", containers.names["fastqc",1]," /input",reads,  sep="")
+  params <- paste("--cidfile ", input.folder,"/dockerID -v ", input.folder,":/input  -d ", containers.names["fastqc",1]," /input ",reads,  sep="")
 
   cat("\n\n***************   fastq  generation   ***************\n\n")
   resultRun=dockerRun(params=params)
