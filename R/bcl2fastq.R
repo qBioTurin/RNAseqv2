@@ -4,14 +4,14 @@
 #' @param output.folder, a character string indicating the fastq output folder.
 #' @param threadBCL, a number indicating the number of threads to be used for loading BCL data
 #' @param threadWritingFastq, a number indicating the number of threads to be used for writing FASTQ data
-#'  @param threadDem, a number indicating the number of threads to be used for for processing demultiplexed data
+#' @param threadDem, a number indicating the number of threads to be used for for processing demultiplexed data
 #'
 #' @return Fastq files
 #' @author Marco Beccuti, marco.beccuti [at] unito [dot] it, University of Torino
 #' @examples
 #'\dontrun{
 #'     #running rsemstar index for human
-#'     demultiplexing("~/home/data/input","~/home/data/output")
+#'     bcl2fastq("~/home/data/input","~/home/data/output")
 #'
 #' }
 #' @export

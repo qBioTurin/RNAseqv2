@@ -14,8 +14,9 @@ bcl2fastq(samplesheet, output.folder, threadBCL = 1,
 
 \item{threadBCL, }{a number indicating the number of threads to be used for loading BCL data}
 
-\item{threadWritingFastq, }{a number indicating the number of threads to be used for writing FASTQ data
-@param threadDem, a number indicating the number of threads to be used for for processing demultiplexed data}
+\item{threadWritingFastq, }{a number indicating the number of threads to be used for writing FASTQ data}
+
+\item{threadDem, }{a number indicating the number of threads to be used for for processing demultiplexed data}
 }
 \value{
 Fastq files
@@ -26,7 +27,7 @@ This function executes the Illumina bcl2fastq program
 \examples{
 \dontrun{
     #running rsemstar index for human
-    demultiplexing("~/home/data/input","~/home/data/output")
+    bcl2fastq("~/home/data/input","~/home/data/output")
 
 }
 }
