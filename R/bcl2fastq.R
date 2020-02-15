@@ -10,7 +10,7 @@
 #' @author Marco Beccuti, marco.beccuti [at] unito [dot] it, University of Torino
 #' @examples
 #'\dontrun{
-#'     #running rsemstar index for human
+#'     #running bcl2fastq
 #'     bcl2fastq("~/home/data/input","~/home/data/output")
 #'
 #' }

@@ -26,7 +26,7 @@ This function executes the Illumina bcl2fastq program
 }
 \examples{
 \dontrun{
-    #running rsemstar index for human
+    #running bcl2fastq
     bcl2fastq("~/home/data/input","~/home/data/output")
 
 }
