@@ -14,7 +14,7 @@ install_github("https://github.com/qBioTurin/RNAseqv2", ref="master")
 To download all the docker images exploited by **RNAseqv2**  you can use:
 
 ```
-library(RNAseqv2)
+library(RNAseq2)
 downloadContainers()
 ```
 
