@@ -2,19 +2,19 @@
 A collection of functions to execute RNAseq analysis wrapped in docker containers
 
 ### Install
-To install **epimod** you can use use **devtools**:
+To install **RNAseqv2** you can use use **devtools**:
 
 ```
 install.packages("devtools")
 library(devtools)
-install_github("https://github.com/qBioTurin/epimod", ref="master")
+install_github("https://github.com/qBioTurin/RNAseqv2", ref="master")
 ```
 
 #### Download Containers
-To download all the docker images exploited by **epimod**  you can use:
+To download all the docker images exploited by **RNAseqv2**  you can use:
 
 ```
-library(epimod)
+library(RNAseq2)
 downloadContainers()
 ```
 
