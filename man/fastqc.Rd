@@ -9,7 +9,7 @@ fastqc(input.folder, reads = 1e+09)
 \arguments{
 \item{input.folder, }{a character string indicating the folder where input data are located and where output will be written}
 
-\item{reads, }{integer value indicating the number of reads to be evaluated. The default value allows user to evalueate upto 1e^9 reads.}
+\item{reads, }{integer value indicating the number of reads to be evaluated in each fastq file. The default value allows user to evalueate upto 1e^9 reads for fastq file.}
 }
 \description{
 This function executes a fedora docker that produces as output FASTQCstdin_fastqc.html and stdin_fastqc.zip files
