@@ -4,19 +4,19 @@
 \alias{fastqc}
 \title{A function to handle a docker containier executing fastqc}
 \usage{
-fastqc(input.folder, reads = 1000)
+fastqc(input.folder, reads = 1e+09)
 }
 \arguments{
 \item{input.folder, }{a character string indicating the folder where input data are located and where output will be written}
 
-\item{reads, }{integer value indicating the number of reads to be evaluated}
+\item{reads, }{integer value indicating the number of reads to be evaluated. The default value allows user to evalueate upto 1e^9 reads.}
 }
 \description{
 This function executes a fedora docker that produces as output FASTQCstdin_fastqc.html and stdin_fastqc.zip files
 }
 \examples{
 \dontrun{
-    fastqc("fastq_folder", 1000)
+    fastqc("fastq_folder")
 }
 
 }

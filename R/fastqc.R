@@ -1,16 +1,16 @@
 #' @title A function to handle a docker containier executing fastqc
 #' @description This function executes a fedora docker that produces as output FASTQCstdin_fastqc.html and stdin_fastqc.zip files
 #' @param input.folder, a character string indicating the folder where input data are located and where output will be written
-#' @param reads, integer value indicating the number of reads to be evaluated
+#' @param reads, integer value indicating the number of reads to be evaluated. The default value allows user to evalueate upto 1e^9 reads.
 #' @author Marco Beccuti, marco.beccuti [at] unito [dot] it, University of Torino
 #'
 #' @examples
 #' \dontrun{
-#'     fastqc("fastq_folder", 1000)
+#'     fastqc("fastq_folder")
 #' }
 #'
 #' @export
-fastqc <- function(input.folder, reads=1000){
+fastqc <- function(input.folder, reads=1000000000){
 
   home <- getwd()
 
